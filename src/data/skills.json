@@ -1,0 +1,66 @@
+{
+  "frontend": [
+    {
+      "name": "React.js",
+      "level": 90
+    },
+    {
+      "name": "JavaScript",
+      "level": 85
+    },
+    {
+      "name": "HTML",
+      "level": 95
+    },
+    {
+      "name": "CSS",
+      "level": 90
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": 88
+    }
+  ],
+  "backend": [
+    {
+      "name": "Node.js",
+      "level": 70
+    },
+    {
+      "name": "MongoDB",
+      "level": 75
+    }
+  ],
+  "languages": [
+    {
+      "name": "Python",
+      "level": 85
+    },
+    {
+      "name": "C",
+      "level": 70
+    },
+    {
+      "name": "Java",
+      "level": 75
+    }
+  ],
+  "tools": [
+    {
+      "name": "Git",
+      "level": 85
+    },
+    {
+      "name": "GitHub",
+      "level": 90
+    },
+    {
+      "name": "REST APIs",
+      "level": 80
+    },
+    {
+      "name": "Cybersecurity",
+      "level": 50
+    }
+  ]
+}

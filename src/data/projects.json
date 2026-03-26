@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "PG Finder",
+    "description": "A comprehensive MERN stack platform to search, compare, and book PG accommodations with ease.",
+    "tech": ["MongoDB", "Express", "React", "Node.js"],
+    "github": "https://github.com/krushiler-official/pg-finder",
+    "demo": "https://pgfinder-us.netlify.app",
+    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": 2,
+    "title": "Movies Explorer",
+    "description": "A React-based frontend project that allows users to explore movies, view details, and discover trending content using an external movie API.",
+    "tech": ["React", "JavaScript", "CSS", "Movie API"],
+    "github":"https://github.com/krushiler-official/Movies-explorer",
+    "demo": "https://movies-k.netlify.app/",
+    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": 3,
+    "title": "Hidden Gems of India",
+    "description": "A beautifully designed tourism website showcasing offbeat and unique travel destinations across India.",
+    "tech": ["HTML", "CSS", "JavaScript", "GSAP"],
+    "github": "https://github.com/krushiler-official/Hidden-Gems-of-India",
+    "demo": "https://hidden-gems-india.netlify.app/",
+    "image": "https://images.stockcake.com/public/e/e/a/eea1651e-7d31-4eed-8c33-77c4b51429b6_large/explorer-observing-nature-stockcake.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Gleamora Shopping App",
+    "description": "A modern Android shopping application with secure authentication, cart management, and seamless checkout flow.",
+    "tech": ["Java", "Firebase", "Android SDK"],
+    "github": "https://github.com/krushiler-official/Gleamora",
+    "demo": "https://github.com/krushiler-official/Gleamora/releases",
+    "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=800"
+  }
+]
