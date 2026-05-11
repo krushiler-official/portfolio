@@ -19,7 +19,7 @@ const SkillCard = ({ name, level }) => (
         whileInView={{ width: `${level}%` }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="h-full bg-gradient-to-r from-primary to-accent"
+        className="h-full bg-linear-to-r from-primary to-accent"
       />
     </div>
   </motion.div>

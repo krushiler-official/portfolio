@@ -29,6 +29,10 @@
     {
       "name": "MongoDB",
       "level": 75
+    },
+    {
+      "name": "Fast API",
+      "level": 75
     }
   ],
   "languages": [
@@ -59,8 +63,12 @@
       "level": 80
     },
     {
-      "name": "Cybersecurity",
-      "level": 50
+      "name": "VsCode",
+      "level": 80
+    },
+    {
+      "name": "Docker",
+      "level": 80
     }
   ]
 }

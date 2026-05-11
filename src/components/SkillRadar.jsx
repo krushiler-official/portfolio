@@ -28,7 +28,7 @@ const SkillRadar = () => {
   };
 
   return (
-    <div className="w-full h-[400px] md:h-[500px] flex items-center justify-center">
+    <div className="w-full h-100 md:h-125 flex items-center justify-center">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
           <PolarGrid stroke="#334155" />
