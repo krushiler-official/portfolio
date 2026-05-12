@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <div className="bg-dark text-text-light selection:bg-primary selection:text-white">
+    <div className="bg-dark text-text-light selection:bg-primary/20 selection:text-primary bg-aurora bg-grid">
       <Navbar />
       <main>
         <Hero />

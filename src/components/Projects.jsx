@@ -14,7 +14,7 @@ const ProjectCard = ({ project, index }) => {
       transition={{ delay: index * 0.1 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative glass rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-500"
+      className="group relative glass-glow rounded-2xl overflow-hidden transition-all duration-500"
     >
       <div className="relative aspect-video overflow-hidden">
         <img 
@@ -75,9 +75,7 @@ const ProjectCard = ({ project, index }) => {
         </p>
         <div className="flex flex-wrap gap-2">
           {project.tech.map(t => (
-            <span key={t} className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-white/5 text-primary border border-primary/20 rounded">
-              {t}
-            </span>
+            <span key={t} className="badge">{t}</span>
           ))}
         </div>
       </div>
@@ -87,7 +85,10 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative section-dark">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-1/4 w-96 h-96 glow-blob glow-blob-violet opacity-15"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -95,9 +96,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
+          <div className="divider mb-4"></div>
           <p className="text-text-dim max-w-2xl mx-auto">
             A selection of my recent works, ranging from full-stack web applications to data science systems and mobile apps.
           </p>

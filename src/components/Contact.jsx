@@ -7,15 +7,15 @@ const ContactItem = ({ icon, label, value, href }) => (
     href={href}
     target={href.startsWith('http') ? '_blank' : '_self'}
     rel="noreferrer"
-    whileHover={{ x: 10 }}
+    whileHover={{ x: 8 }}
     className="flex items-center gap-4 group"
   >
-    <div className="p-3 bg-white/5 rounded-lg text-primary group-hover:bg-primary/20 transition-all">
+    <div className="btn-icon shrink-0">
       {icon}
     </div>
     <div>
-      <p className="text-xs font-mono text-text-dim uppercase tracking-widest">{label}</p>
-      <p className="text-text-light font-bold group-hover:text-primary transition-colors">{value}</p>
+      <p className="text-xs font-mono text-text-muted uppercase tracking-widest">{label}</p>
+      <p className="text-text-dim font-medium group-hover:text-primary transition-colors text-sm">{value}</p>
     </div>
   </motion.a>
 );
@@ -30,7 +30,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" className="py-24 relative section-dark">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 glow-blob glow-blob-cyan opacity-10"></div>
+        <div className="absolute top-1/4 right-0 w-80 h-80 glow-blob glow-blob-violet opacity-10"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,7 +42,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-4 text-center">
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-text-dim max-w-2xl mx-auto">
@@ -54,7 +58,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-2xl font-bold text-text-light mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-heading font-bold text-text-light mb-6">Contact Information</h3>
             <div className="space-y-6">
               <ContactItem
                 icon={<Mail />}
@@ -84,8 +88,8 @@ const Contact = () => {
 
             <div className="pt-8">
               <a href="/resume.pdf" download>
-                <button className="flex items-center gap-2 bg-linear-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-bold hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all">
-                  Download My Resume <Download size={20} />
+                <button className="btn-primary">
+                  Download My Resume <Download size={16} />
                 </button>
               </a>
             </div>
@@ -96,7 +100,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass p-8 rounded-3xl border border-white/5"
+            className="glass-elevated p-8 rounded-3xl"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -107,7 +111,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-text-light focus:border-primary outline-none transition-all"
+                    className="input-field"
                     placeholder=" "
                   />
                 </div>
@@ -118,7 +122,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-text-light focus:border-primary outline-none transition-all"
+                    className="input-field"
                     placeholder=" "
                   />
                 </div>
@@ -130,7 +134,7 @@ const Contact = () => {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-text-light focus:border-primary outline-none transition-all"
+                  className="input-field resize-none"
                   placeholder="How can I help you?"
                 />
               </div>
@@ -138,7 +142,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-primary hover:bg-blue-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20"
+                className="btn-primary w-full justify-center py-4"
               >
                 Send Message <Send size={20} />
               </motion.button>

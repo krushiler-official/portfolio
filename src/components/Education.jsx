@@ -21,8 +21,8 @@ const EducationItem = ({ degree, institution, period, description, index }) => (
         ) : null}
     </div>
 
-    <div className="z-10 bg-primary p-3 rounded-full border-4 border-dark shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-      <GraduationCap className="text-white" size={24} />
+    <div className="z-10 bg-surface p-3 rounded-full border border-primary/30 shadow-glow-cyan">
+      <GraduationCap className="text-primary" size={22} />
     </div>
 
     <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'order-1 pl-8 md:pl-0' : 'pl-8'}`}>
@@ -43,8 +43,8 @@ const EducationItem = ({ degree, institution, period, description, index }) => (
                 </div>
             </div>
         )}
-        <div className="glass mt-4 p-4 rounded-xl border border-white/5">
-            <p className="text-text-dim text-sm leading-relaxed">
+        <div className="glass-glow mt-4 p-4 rounded-xl">
+            <p className="text-text-dim text-sm leading-relaxed font-body">
                 {description}
             </p>
         </div>
@@ -63,7 +63,10 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-24 bg-dark/50 overflow-hidden">
+    <section id="education" className="py-24 section-surface overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-80 h-80 glow-blob glow-blob-green opacity-10"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,9 +74,10 @@ const Education = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-4">
             My <span className="text-gradient">Journey</span>
           </h2>
+          <div className="divider mb-4"></div>
           <p className="text-text-dim max-w-2xl mx-auto">
             My educational background that shaped my technical skills and professional outlook.
           </p>
@@ -81,7 +85,7 @@ const Education = () => {
 
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-linear-to-b from-primary via-accent to-transparent"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-linear-to-b from-primary via-secondary to-transparent opacity-30"></div>
 
           <div className="relative">
             {educationData.map((edu, index) => (

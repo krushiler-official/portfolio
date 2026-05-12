@@ -1,0 +1,188 @@
+================================================================================
+                        PORTFOLIO - PROJECT DOCUMENTATION
+================================================================================
+Owner   : Krushil Prajapati
+Version : 0.0.0
+Stack   : React 19 + Vite 8 + Tailwind CSS v4
+
+--------------------------------------------------------------------------------
+1. PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+A personal portfolio website built with React and Vite. It showcases skills,
+projects, education, and contact information with smooth animations and a
+modern dark-themed UI.
+
+--------------------------------------------------------------------------------
+2. TECH STACK & KEY DEPENDENCIES
+--------------------------------------------------------------------------------
+Framework       : React 19.2.4
+Build Tool      : Vite 8.0.0
+Styling         : Tailwind CSS 4.2.1
+Animations      : Framer Motion 12.36.0
+Charts          : Recharts 3.8.0
+Icons           : Lucide React 0.577.0
+Routing         : React Router DOM 7.13.1
+Map             : React Leaflet 5.0.0 + Leaflet 1.9.4
+Typewriter FX   : React Simple Typewriter 5.0.1
+Utilities       : clsx, tailwind-merge
+
+Dev Tools       : ESLint 9, @vitejs/plugin-react, @tailwindcss/postcss
+
+--------------------------------------------------------------------------------
+3. PROJECT STRUCTURE
+--------------------------------------------------------------------------------
+f:\Portfolio\
+├── public\
+│   ├── favicon.svg
+│   ├── icons.svg
+│   └── resume.pdf              <- Downloadable resume
+├── src\
+│   ├── assets\
+│   │   └── images\             <- Static images (profile.png, etc.)
+│   ├── components\             <- All UI components (see Section 4)
+│   ├── data\
+│   │   ├── projects.json       <- Project entries data
+│   │   └── skills.json         <- Skills & proficiency levels
+│   ├── pages\
+│   │   └── Home.jsx            <- Single page that composes all sections
+│   ├── App.jsx                 <- Router setup
+│   ├── App.css
+│   ├── index.css               <- Global styles / Tailwind directives
+│   └── main.jsx                <- React DOM entry point
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── eslint.config.js
+└── package.json
+
+--------------------------------------------------------------------------------
+4. COMPONENTS
+--------------------------------------------------------------------------------
+Navbar.jsx
+  - Fixed top navigation bar.
+  - Becomes a frosted-glass bar on scroll (scrollY > 50).
+  - Responsive: hamburger menu on mobile via AnimatePresence.
+  - Links: About, Skills, Projects, Education, Contact.
+  - Social icons: GitHub, LinkedIn (desktop); + Mail (mobile).
+
+Hero.jsx
+  - Full-screen landing section.
+  - Typewriter effect cycling through three role titles.
+  - 3D tilt effect on profile image driven by mouse position.
+  - CTA buttons: "View Projects" and "Resume" (download).
+  - Animated scroll indicator at the bottom.
+
+About.jsx
+  - Two-column layout: profile photo + bio text.
+  - Info cards: Name, Role, Location, Interest.
+  - Entrance animations via Framer Motion (slide in from sides).
+
+Skills.jsx
+  - Section id="skills".
+  - Left column: SkillRadar chart.
+  - Right column: four skill categories (Frontend, Backend/DB,
+    Languages, Tools & Security), each with animated progress bars.
+
+SkillRadar.jsx
+  - Recharts RadarChart visualising top 6 skills from skills.json
+    (2 frontend, 1 backend, 1 language, 2 tools).
+  - Custom tooltip with glassmorphism styling.
+  - Responsive container; height h-100 (mobile) / md:h-125 (desktop).
+
+Projects.jsx
+  - Section id="projects".
+  - Reads from src/data/projects.json.
+  - 3-column grid of ProjectCard components.
+  - Each card: image with hover overlay showing GitHub + Live Demo links,
+    title, description, and tech-stack badges.
+
+Education.jsx
+  - Section id="education".
+  - Vertical timeline layout (alternating left/right on desktop).
+  - Currently one entry: B.E. Computer Engineering (2022–2026).
+
+LocationMap.jsx
+  - Interactive Leaflet map centred on Bopal, Ahmedabad (23.0338, 72.4633).
+  - Side panel with location details.
+  - Fixes Leaflet default marker icon issue for Vite/React.
+
+Contact.jsx
+  - Section id="contact".
+  - Left: contact info items (Email, LinkedIn, GitHub, Location) +
+    Resume download button.
+  - Right: contact form (Name, Email, Message) — demo alert on submit.
+
+Footer.jsx
+  - Simple footer with logo, "Built with React & Tailwind CSS" note,
+    and social icon links.
+
+--------------------------------------------------------------------------------
+5. DATA FILES
+--------------------------------------------------------------------------------
+src/data/skills.json
+  Structure:
+  {
+    "frontend": [ { "name": "...", "level": 0-100 }, ... ],
+    "backend":  [ { "name": "...", "level": 0-100 }, ... ],
+    "languages":[ { "name": "...", "level": 0-100 }, ... ],
+    "tools":    [ { "name": "...", "level": 0-100 }, ... ]
+  }
+
+src/data/projects.json
+  Structure (array):
+  [
+    {
+      "id": 1,
+      "title": "...",
+      "description": "...",
+      "image": "url or path",
+      "github": "https://...",
+      "demo": "https://...",
+      "tech": ["React", "Node.js", ...]
+    },
+    ...
+  ]
+
+--------------------------------------------------------------------------------
+6. ROUTING
+--------------------------------------------------------------------------------
+App.jsx sets up a BrowserRouter with a single route:
+  /  ->  Home.jsx
+
+All navigation within the page uses anchor hash links (#about, #skills, etc.).
+
+--------------------------------------------------------------------------------
+7. SCRIPTS
+--------------------------------------------------------------------------------
+npm run dev       -> Start Vite dev server with HMR
+npm run build     -> Production build (output: dist/)
+npm run preview   -> Preview production build locally
+npm run lint      -> Run ESLint
+
+--------------------------------------------------------------------------------
+8. STYLING NOTES
+--------------------------------------------------------------------------------
+- Tailwind CSS v4 is used. Arbitrary values (e.g. h-[500px]) should be
+  replaced with v4 scale utilities (e.g. h-125) where possible.
+- Custom utility class "glass" provides the frosted-glass card effect
+  (defined in index.css).
+- Custom Tailwind theme tokens used throughout:
+    text-primary, text-secondary, text-accent
+    text-text-light, text-text-dim
+    bg-dark
+    text-gradient (gradient text utility)
+- Animations: animate-float, animate-spin-slow, animate-pulse-slow
+  are custom keyframe animations defined in index.css / tailwind config.
+
+--------------------------------------------------------------------------------
+9. CONTACT INFORMATION
+--------------------------------------------------------------------------------
+Email    : krushilprajapati.er@gmail.com
+LinkedIn : https://linkedin.com/in/krushil-prajapati
+GitHub   : https://github.com/krushiler-official
+Location : Bopal, Ahmedabad, Gujarat, India
+
+================================================================================
+                              END OF DOCUMENTATION
+================================================================================

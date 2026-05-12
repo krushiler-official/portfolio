@@ -4,7 +4,10 @@ import profile from '../assets/images/profile.png';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-24 relative section-surface">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 glow-blob glow-blob-violet opacity-20"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -13,10 +16,10 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4 text-center">
-            About <span className="text-primary text-gradient">Me</span>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-4 text-center">
+            About <span className="text-gradient">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
+          <div className="divider mb-8"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -27,7 +30,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden glass p-4">
+            <div className="aspect-square rounded-2xl overflow-hidden glass-glow p-3">
               <img
                 src={profile}
                 alt="Krushil Prajapati"
@@ -51,19 +54,19 @@ const About = () => {
               I am a passionate Computer Engineering student with a deep interest in building innovative digital solutions. My journey in tech is driven by curiosity and a commitment to excellence.
             </p>
             <p className="text-text-dim text-lg leading-relaxed">
-              With a strong foundation in the <span className="text-primary font-bold">MERN stack</span>, I love creating web applications that are both functional and beautiful. My interests extend to <span className="text-secondary font-bold">Mobile App Development</span> and <span className="text-accent font-bold">Cybersecurity</span>, where I explore the intricacies of ethical hacking and secure coding.
+             With a strong foundation in <span className="text-primary font-bold">Full Stack Development</span>, I enjoy building modern web applications that are fast, scalable, and user-focused. I’m especially passionate about <span className="text-secondary font-bold">Frontend Development</span>, crafting clean interfaces and smooth user experiences with attention to detail, performance, and responsive design.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
               {[
                 { label: 'Name', value: 'Krushil Prajapati' },
-                { label: 'Role', value: 'Full Stack Developer, Frontend Developer' },
-                { label: 'Location', value: 'Bopal, Ahmedabad, Gujarat, India' },
-                { label: 'Interest', value: 'WebDevlopment, Frontend,Cybersecurity' }
+                { label: 'Role', value: 'Full Stack Developer' },
+                { label: 'Location', value: 'Ahmedabad, Gujarat' },
+                { label: 'Interest', value: 'Web Dev & Frontend' }
               ].map((item) => (
-                <div key={item.label} className="glass p-4 rounded-xl">
-                  <p className="text-primary text-sm font-mono">{item.label}</p>
-                  <p className="text-text-light font-bold">{item.value}</p>
+                <div key={item.label} className="card-stat">
+                  <p className="text-primary text-xs font-mono tracking-widest uppercase mb-1">{item.label}</p>
+                  <p className="text-text-light font-semibold font-heading text-sm">{item.value}</p>
                 </div>
               ))}
             </div>

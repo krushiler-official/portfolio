@@ -18,13 +18,12 @@ const Hero = () => {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-aurora bg-grid"
     >
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-      </div>
+      {/* Glow blobs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 glow-blob glow-blob-cyan opacity-60"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-125 h-125 glow-blob glow-blob-violet opacity-40" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-3/4 left-1/2 w-64 h-64 glow-blob glow-blob-green opacity-30" style={{ animationDelay: '4s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
@@ -32,8 +31,10 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-primary font-mono mb-4 text-lg">Hi, my name is</h2>
-          <h1 className="text-5xl md:text-7xl font-bold text-text-light mb-4">
+          <h2 className="text-primary font-mono text-sm mb-4 tracking-[0.2em] uppercase opacity-80">
+            Hi, my name is
+          </h2>
+          <h1 className="text-5xl md:text-7xl font-heading font-bold text-text-light mb-4 tracking-tight">
             Krushil Prajapati
           </h1>
           <div className="text-2xl md:text-4xl font-semibold text-text-dim mb-8 h-12">
@@ -48,26 +49,26 @@ const Hero = () => {
             />
           </div>
           <p className="text-lg text-text-dim max-w-lg mb-10 leading-relaxed">
-            I build digital experiences that are not only visually impressive but also technically robust and secure. Currently focusing on Full stack Development (With Ai Integration)and  Cybersecurity.
+            I build digital experiences that are not only visually impressive but also technically robust and secure. Currently focusing on Full stack Development (With Ai Integration).
           </p>
 
           <div className="flex flex-wrap gap-4">
             <a href="#projects">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-primary/25"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="btn-primary"
               >
-                View Projects <ExternalLink size={20} />
+                View Projects <ExternalLink size={16} />
               </motion.button>
             </a>
             <a href="/resume.pdf" download="Krushil_Prajapati_Resume.pdf">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 border border-white/20 hover:border-primary px-8 py-3 rounded-full font-bold transition-all"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="btn-ghost"
               >
-                Resume <Download size={20} />
+                Resume <Download size={16} />
               </motion.button>
             </a>
           </div>
@@ -83,26 +84,15 @@ const Hero = () => {
           }}
         >
           <motion.div
-            style={{
-              rotateX: -tilt.y,
-              rotateY: tilt.x,
-            }}
-            className="relative w-64 h-64 md:w-80 md:h-80"
+            style={{ rotateX: -tilt.y, rotateY: tilt.x }}
+            className="relative w-64 h-64 md:w-80 md:h-80 hero-image-wrapper"
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent animate-spin-slow blur-xl opacity-50"></div>
-            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/20 animate-float bg-dark">
-              {/* Profile Placeholder - will use a generated image or generic avatar icon if none exists */}
-              <div className="w-full h-full flex items-center justify-center bg-slate-800">
-                <img
-                  src={profile}
-                  alt="Krushil Prajapati"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-tr from-primary via-secondary to-accent animate-spin-slow blur-2xl opacity-30"></div>
+            <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 bg-surface">
+              <img src={profile} alt="Krushil Prajapati" className="w-full h-full object-cover" />
             </div>
-
-            {/* Subtle glow effect around image */}
-            <div className="absolute -inset-4 rounded-3xl bg-primary/20 blur-2xl -z-10 group-hover:bg-primary/40 transition-all duration-500"></div>
+            {/* Glow ring */}
+            <div className="absolute -inset-6 rounded-3xl border border-primary/10 animate-glow-pulse pointer-events-none"></div>
           </motion.div>
         </motion.div>
       </div>
