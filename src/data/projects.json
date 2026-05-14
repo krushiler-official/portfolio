@@ -6,7 +6,7 @@
     "tech": ["MongoDB", "Express", "React", "Node.js"],
     "github": "https://github.com/krushiler-official/pg-finder",
     "demo": "https://pgfinder-us.netlify.app",
-    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaswyiBCRFQNp2eT6EUUmflarH2HkkX6ut2Q&s"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "tech": ["React", "JavaScript", "CSS", "Movie API"],
     "github":"https://github.com/krushiler-official/Movies-explorer",
     "demo": "https://movies-k.netlify.app/",
-    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=800"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZtiQ2g5udQBlL9FhZzBKIHFPU_DBcefKhQ&s"
   },
   {
     "id": 3,
@@ -33,6 +33,15 @@
     "tech": ["Java", "Firebase", "Android SDK"],
     "github": "https://github.com/krushiler-official/Gleamora",
     "demo": "https://github.com/krushiler-official/Gleamora/releases",
-    "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=800"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7NR8u5ZqjK9nZdQ5v0pVcF1C9_kXRAfWqQQ&s"
+  },
+  {
+    "id": 5,
+    "title": "POS CAFE System",
+    "description": "A modern POS system for managing cafe operations with real-time inventory tracking and sales reporting.",
+    "tech": ["react", "FastAPI", "MongoDB"],
+    "github": "https://github.com/krushiler-official/POS",
+    "demo": "https://pos-cafe-s.netlify.app/",
+    "image": "https://www.gofrugal.com/sites/gweb/files/gofrugal/images/restaurant/qsr-macro/cofee-shop-banner.webp"
   }
 ]
